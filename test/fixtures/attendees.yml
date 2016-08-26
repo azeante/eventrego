@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timeRegistration: 2016-08-26 16:20:41
+  timePayment: 2016-08-26 16:20:41
+  amountBilled: 1.5
+  amountPaid: 1.5
+  person: one
+  event: one
+
+two:
+  timeRegistration: 2016-08-26 16:20:41
+  timePayment: 2016-08-26 16:20:41
+  amountBilled: 1.5
+  amountPaid: 1.5
+  person: two
+  event: two

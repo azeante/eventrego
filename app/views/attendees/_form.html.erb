@@ -1,0 +1,47 @@
+<%= form_for(attendee) do |f| %>
+  <% if attendee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attendee.errors.count, "error") %> prohibited this attendee from being saved:</h2>
+
+      <ul>
+      <% attendee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :timeRegistration %>
+    <%= f.datetime_select :timeRegistration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timePayment %>
+    <%= f.datetime_select :timePayment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amountBilled %>
+    <%= f.text_field :amountBilled %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amountPaid %>
+    <%= f.text_field :amountPaid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :person_id %>
+    <%= f.text_field :person_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_id %>
+    <%= f.text_field :event_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timeregistration:</strong>
+  <%= @attendee.timeRegistration %>
+</p>
+
+<p>
+  <strong>Timepayment:</strong>
+  <%= @attendee.timePayment %>
+</p>
+
+<p>
+  <strong>Amountbilled:</strong>
+  <%= @attendee.amountBilled %>
+</p>
+
+<p>
+  <strong>Amountpaid:</strong>
+  <%= @attendee.amountPaid %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @attendee.person %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @attendee.event %>
+</p>
+
+<%= link_to 'Edit', edit_attendee_path(@attendee) %> |
+<%= link_to 'Back', attendees_path %>
