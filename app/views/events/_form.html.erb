@@ -1,0 +1,62 @@
+<%= form_for(event) do |f| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dateOfEvent %>
+    <%= f.date_select :dateOfEvent %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timeOfEvent %>
+    <%= f.time_select :timeOfEvent %>
+  </div>
+
+  <div class="field">
+    <%= f.label :venue %>
+    <%= f.text_field :venue %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maximumParticipants %>
+    <%= f.number_field :maximumParticipants %>
+  </div>
+
+  <div class="field">
+    <%= f.label :minimumParticipants %>
+    <%= f.number_field :minimumParticipants %>
+  </div>
+
+  <div class="field">
+    <%= f.label :participantsMustBring %>
+    <%= f.text_area :participantsMustBring %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

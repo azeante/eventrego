@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dateOfEvent: 2016-08-26
+  timeOfEvent: 2016-08-26 16:17:47
+  venue: MyString
+  price: 1.5
+  title: MyString
+  maximumParticipants: 1
+  minimumParticipants: 1
+  participantsMustBring: MyText
+  notes: MyText
+
+two:
+  dateOfEvent: 2016-08-26
+  timeOfEvent: 2016-08-26 16:17:47
+  venue: MyString
+  price: 1.5
+  title: MyString
+  maximumParticipants: 1
+  minimumParticipants: 1
+  participantsMustBring: MyText
+  notes: MyText
