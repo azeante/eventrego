@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Biography:</strong>
+  <%= @presenter.biography %>
+</p>
+
+<p>
+  <strong>Remunerationarrangements:</strong>
+  <%= @presenter.remunerationArrangements %>
+</p>
+
+<p>
+  <strong>Allowance:</strong>
+  <%= @presenter.allowance %>
+</p>
+
+<p>
+  <strong>Remuneration:</strong>
+  <%= @presenter.remuneration %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @presenter.person %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @presenter.event %>
+</p>
+
+<%= link_to 'Edit', edit_presenter_path(@presenter) %> |
+<%= link_to 'Back', presenters_path %>

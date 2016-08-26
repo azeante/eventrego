@@ -1,0 +1,47 @@
+<%= form_for(presenter) do |f| %>
+  <% if presenter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(presenter.errors.count, "error") %> prohibited this presenter from being saved:</h2>
+
+      <ul>
+      <% presenter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :biography %>
+    <%= f.text_area :biography %>
+  </div>
+
+  <div class="field">
+    <%= f.label :remunerationArrangements %>
+    <%= f.text_area :remunerationArrangements %>
+  </div>
+
+  <div class="field">
+    <%= f.label :allowance %>
+    <%= f.text_field :allowance %>
+  </div>
+
+  <div class="field">
+    <%= f.label :remuneration %>
+    <%= f.text_field :remuneration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :person_id %>
+    <%= f.text_field :person_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_id %>
+    <%= f.text_field :event_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
