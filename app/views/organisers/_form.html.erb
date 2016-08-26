@@ -1,0 +1,32 @@
+<%= form_for(organiser) do |f| %>
+  <% if organiser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(organiser.errors.count, "error") %> prohibited this organiser from being saved:</h2>
+
+      <ul>
+      <% organiser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :role %>
+    <%= f.text_area :role %>
+  </div>
+
+  <div class="field">
+    <%= f.label :person_id %>
+    <%= f.text_field :person_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :event_id %>
+    <%= f.text_field :event_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @organiser.role %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @organiser.person %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @organiser.event %>
+</p>
+
+<%= link_to 'Edit', edit_organiser_path(@organiser) %> |
+<%= link_to 'Back', organisers_path %>
