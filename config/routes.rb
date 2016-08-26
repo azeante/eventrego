@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :volunteers
   resources :organisers
   resources :attendees
   resources :presenters
