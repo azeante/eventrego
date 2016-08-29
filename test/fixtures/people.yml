@@ -3,15 +3,15 @@
 one:
   firstName: MyString
   lastName: MyString
-  emailAddress: MyString
-  telNo: MyString
+  emailAddress: Siest1960@rhyta.com
+  telNo: 2025550188
   ifSubscribed: false
-  gender: MyString
+  gender: M
 
 two:
   firstName: MyString
   lastName: MyString
-  emailAddress: MyString
-  telNo: MyString
+  emailAddress: Siest1961@rhyta.com
+  telNo: 2025550177
   ifSubscribed: false
-  gender: MyString
+  gender: F

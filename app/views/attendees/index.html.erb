@@ -5,7 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Timeregistration</th>
       <th>Timepayment</th>
       <th>Amountbilled</th>
       <th>Amountpaid</th>
@@ -18,7 +17,6 @@
   <tbody>
     <% @attendees.each do |attendee| %>
       <tr>
-        <td><%= attendee.timeRegistration %></td>
         <td><%= attendee.timePayment %></td>
         <td><%= attendee.amountBilled %></td>
         <td><%= attendee.amountPaid %></td>

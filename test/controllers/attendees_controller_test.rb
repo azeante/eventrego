@@ -17,7 +17,7 @@ class AttendeesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create attendee" do
     assert_difference('Attendee.count') do
-      post attendees_url, params: { attendee: { amountBilled: @attendee.amountBilled, amountPaid: @attendee.amountPaid, event_id: @attendee.event_id, person_id: @attendee.person_id, timePayment: @attendee.timePayment, timeRegistration: @attendee.timeRegistration } }
+      post attendees_url, params: { attendee: { amountBilled: @attendee.amountBilled, amountPaid: @attendee.amountPaid, event_id: @attendee.event_id, person_id: @attendee.person_id, timePayment: @attendee.timePayment } }
     end
 
     assert_redirected_to attendee_url(Attendee.last)
@@ -34,7 +34,7 @@ class AttendeesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update attendee" do
-    patch attendee_url(@attendee), params: { attendee: { amountBilled: @attendee.amountBilled, amountPaid: @attendee.amountPaid, event_id: @attendee.event_id, person_id: @attendee.person_id, timePayment: @attendee.timePayment, timeRegistration: @attendee.timeRegistration } }
+    patch attendee_url(@attendee), params: { attendee: { amountBilled: @attendee.amountBilled, amountPaid: @attendee.amountPaid, event_id: @attendee.event_id, person_id: @attendee.person_id, timePayment: @attendee.timePayment } }
     assert_redirected_to attendee_url(@attendee)
   end
 
