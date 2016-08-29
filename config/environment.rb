@@ -3,3 +3,5 @@ require_relative 'application'
 
 # Initialize the Rails application.
 Rails.application.initialize!
+
+ENV['FIXTURES'] ||= 'people,events,attendees,organisers,presenters,volunteers'
