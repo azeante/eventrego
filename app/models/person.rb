@@ -3,7 +3,7 @@ class Person < ApplicationRecord
   validates :lastName, presence: true, length: { in: 2..20 }
   validates :emailAddress, presence: true, length: { in: 2..30 }, uniqueness: true, format: { with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i,
     message: "invalid" }
-  validates :telNo, allow_nil: true, length: { minimum: 6 }, uniqueness: true
+  validates :telNo, allow_nil: true, length: { in: 6..30 }, uniqueness: true
   validates :ifSubscribed, presence: true
   validates :gender, presence: true, inclusion: { in: %w(M F), message: "%{value} is invalid" }
   has_many :volunteers
