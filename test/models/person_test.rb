@@ -47,6 +47,13 @@ class PersonTest < ActiveSupport::TestCase
   assert_not @person.valid?
   end
 
+  test "email addresses and telNo should be unique" do
+    duplicate_person = @person.dup
+    duplicate_person.emailAddress = @person.emailAddress.upcase
+    @person.save
+    assert_not duplicate_person.valid?
+  end
+
   test "telephone number should not be too short" do
     @person.telNo = "a" * 5
     assert_not @person.valid?
