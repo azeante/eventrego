@@ -42,6 +42,11 @@ class PersonTest < ActiveSupport::TestCase
   assert_not @person.valid?
   end
 
+  test "email should be in right format" do
+  @person.emailAddress = "a" * 244
+  assert_not @person.valid?
+  end
+
   test "telephone number should not be too short" do
     @person.telNo = "a" * 5
     assert_not @person.valid?
