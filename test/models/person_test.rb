@@ -54,13 +54,18 @@ class PersonTest < ActiveSupport::TestCase
     assert_not duplicate_person.valid?
   end
 
+  test "telephone number should be integer" do
+    @person.telNo = 1.56837502
+    assert_not @person.valid?
+  end
+
   test "telephone number should not be too short" do
-    @person.telNo = "a" * 5
+    @person.telNo = 11111
     assert_not @person.valid?
   end
 
   test "telephone number should not be too long" do
-    @person.telNo = "a" * 31
+    @person.telNo = "2" * 31
     assert_not @person.valid?
   end
 

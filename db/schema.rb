@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829063056) do
+ActiveRecord::Schema.define(version: 20160830103632) do
 
   create_table "attendees", force: :cascade do |t|
     t.datetime "timePayment"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20160829063056) do
     t.string   "firstName"
     t.string   "lastName"
     t.string   "emailAddress"
-    t.string   "telNo"
+    t.integer  "telNo"
     t.boolean  "ifSubscribed"
     t.string   "gender"
     t.datetime "created_at",   null: false
