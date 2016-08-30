@@ -46,4 +46,25 @@ class PersonTest < ActiveSupport::TestCase
     @person.telNo = "a" * 5
     assert_not @person.valid?
   end
+
+  test "telephone number should not be too long" do
+    @person.telNo = "a" * 31
+    assert_not @person.valid?
+  end
+
+  test "ifSubscribed should be present" do
+    @person.ifSubscribed = ""
+    assert_not @person.valid?
+  end
+
+  test "gender should be present" do
+    @person.gender = ""
+    assert_not @person.valid?
+  end
+
+  test "gender should be in set" do
+    @person.gender = "G"
+    assert_not @person.valid?
+  end
+
 end
