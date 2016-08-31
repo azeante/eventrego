@@ -5,7 +5,6 @@ class Attendee < ApplicationRecord
   belongs_to :event
 
   def amount_is_under_zero?
-
     if amountBilled < 0 || amountPaid < 0
       return true
     else
