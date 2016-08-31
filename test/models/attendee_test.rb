@@ -28,4 +28,10 @@ class AttendeeTest < ActiveSupport::TestCase
     @attendee.amountPaid = 1
     assert @attendee.valid?
   end
+
+  test "amountPaid should <= amountBilled" do
+    @attendee.amountBilled = 5
+    @attendee.amountPaid = 4
+    assert @attendee.valid?
+  end
 end
