@@ -38,8 +38,8 @@ class EventTest < ActiveSupport::TestCase
   end
 
   test "price should be at least 0" do
-    @event.price = -0.01
-    assert_not @event.valid?
+    @event.price = 2
+    assert @event.valid?
   end
 
   test "title should be present" do
@@ -58,29 +58,25 @@ class EventTest < ActiveSupport::TestCase
   end
 
   test "maximumParticipants should be integer" do
-    @event.maximumParticipants = 5.5
-    assert_not @event.valid?
+    @event.maximumParticipants = 6
+    assert @event.valid?
   end
 
   test "minimumParticipants should be integer" do
-    @event.minimumParticipants = 1.5
-    assert_not @event.valid?
+    @event.minimumParticipants = 2
+    assert @event.valid?
   end
 
-  test "maximumParticipants should exceed 0" do
-    @event.maximumParticipants = -1
-    assert_not @event.valid?
-  end
-
-  test "minimumParticipants should exceed 0" do
-    @event.minimumParticipants = -2
-    assert_not @event.valid?
+  test "maximumParticipants and minimumParticipants should exceed 0" do
+    @event.maximumParticipants = 5
+    @event.minimumParticipants = 2
+    assert @event.valid?
   end
 
   test "maximumParticipants should exceed minimumParticipants" do
-    @event.maximumParticipants = 2
+    @event.maximumParticipants = 10
     @event.minimumParticipants = 5
-    assert_not @event.valid?
+    assert @event.valid?
   end
 
   test "participantsMustBring should not be too long" do
