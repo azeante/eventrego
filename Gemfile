@@ -55,6 +55,15 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+#https://www.railstutorial.org/book/static_pages
+#Listing 3.2
+group :test do
+  gem 'rails-controller-testing'
+  gem 'minitest-reporters'
+  gem 'guard'
+  gem 'guard-minitest'
+  gem 'ruby-prof'
+end
 # Heroku uses the PostgreSQL database
 # add the pg gem in the production environment to allow Rails to talk to Postgres
 group :production do
