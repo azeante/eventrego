@@ -19,3 +19,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore Spring files.
+# Listing 3.46: https://www.railstutorial.org/book/static_pages
+/spring/*.pid
