@@ -2,22 +2,22 @@
 
 one:
   dateOfEvent: 2016-08-26
-  timeOfEvent: 2016-08-26 16:17:47
+  timeOfEvent: 2016-08-26 16:00:00
   venue: MyString
   price: 1.5
-  title: MyString
-  maximumParticipants: 1
-  minimumParticipants: 1
+  title: Event01
+  maximumParticipants: 10
+  minimumParticipants: 5
   participantsMustBring: MyText
   notes: MyText
 
 two:
-  dateOfEvent: 2016-08-26
-  timeOfEvent: 2016-08-26 16:17:47
+  dateOfEvent: 2016-08-31
+  timeOfEvent: 2016-08-31 16:00:00
   venue: MyString
   price: 1.5
-  title: MyString
-  maximumParticipants: 1
-  minimumParticipants: 1
+  title: Event02
+  maximumParticipants: 10
+  minimumParticipants: 5
   participantsMustBring: MyText
   notes: MyText
