@@ -62,7 +62,7 @@ group :test do
   gem 'minitest-reporters'
   gem 'guard'
   gem 'guard-minitest'
-  gem 'ruby-prof'
+  gem 'ruby-prof', '~> 0.15.9'
 end
 # Heroku uses the PostgreSQL database
 # add the pg gem in the production environment to allow Rails to talk to Postgres
