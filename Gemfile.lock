@@ -227,6 +227,7 @@ PLATFORMS
 
 DEPENDENCIES
   attr_encrypted
+  bcrypt (= 3.1.11)
   better_errors
   bootstrap-sass (= 3.3.6)
   byebug
