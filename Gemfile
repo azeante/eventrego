@@ -4,6 +4,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
+# add bootstrap gem
+# listing 5.5 https://www.railstutorial.org/book/filling_in_the_layout
+gem 'bootstrap-sass', '3.3.6'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
