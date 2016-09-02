@@ -1,0 +1,36 @@
+EventsControllerTest: test_should_create_event
+----------------------------------------------
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+Started POST "/events" for 127.0.0.1 at 2016-08-30 14:44:13 +0800
+Processing by EventsController#create as HTML
+  Parameters: {"event"=>{"dateOfEvent"=>"2016-08-26", "maximumParticipants"=>"1", "minimumParticipants"=>"1", "notes"=>"MyText", "participantsMustBring"=>"MyText", "price"=>"1.5", "timeOfEvent"=>"2000-01-01 16:17:47 UTC", "title"=>"MyString", "venue"=>"MyString"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("dateOfEvent", "timeOfEvent", "venue", "price", "title", "maximumParticipants", "minimumParticipants", "participantsMustBring", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["dateOfEvent", Fri, 26 Aug 2016], ["timeOfEvent", 2000-01-01 16:17:47 UTC], ["venue", "MyString"], ["price", 1.5], ["title", "MyString"], ["maximumParticipants", 1], ["minimumParticipants", 1], ["participantsMustBring", "MyText"], ["notes", "MyText"], ["created_at", 2016-08-30 06:44:13 UTC], ["updated_at", 2016-08-30 06:44:13 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/events/980190963
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" ORDER BY "events"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+
+
+PeopleControllerTest: test_should_create_person
+-----------------------------------------------
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+Started POST "/people" for 127.0.0.1 at 2016-09-01 16:21:47 +0800
+Processing by PeopleController#create as HTML
+  Parameters: {"person"=>{"emailAddress"=>"Siest1960@rhyta.com", "firstName"=>"David", "gender"=>"M", "ifSubscribed"=>"false", "lastName"=>"Hansson", "telNo"=>"2025550188"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPerson Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE LOWER("people"."emailAddress") = LOWER(?) LIMIT ?[0m  [["emailAddress", "Siest1960@rhyta.com"], ["LIMIT", 1]]
+  [1m[36mPerson Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "people" WHERE "people"."telNo" = ? LIMIT ?[0m  [["telNo", 2025550188], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering people/new.html.erb within layouts/application
+  Rendered people/_form.html.erb (9.9ms)
+  Rendered people/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 47ms (Views: 17.9ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
