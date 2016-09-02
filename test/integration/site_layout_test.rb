@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'application_helper'
 
 class SiteLayoutTest < ActionDispatch::IntegrationTest
   # test "the truth" do
@@ -11,5 +12,11 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", help_path
     assert_select "a[href=?]", about_path
     assert_select "a[href=?]", contact_path
+  end
+
+  test "signup link" do
+    get signup_path
+    assert_template 'users/new'
+    assert_select "title", full_title("Sign up")
   end
 end
