@@ -47,9 +47,23 @@ class PersonTest < ActiveSupport::TestCase
   assert_not @person.valid?
   end
 
-  test "email addresses and telNo should be unique" do
+  test "email address should be unique" do
     duplicate_person = @person.dup
     duplicate_person.emailAddress = @person.emailAddress.upcase
+    @person.save
+    assert_not duplicate_person.valid?
+  end
+
+  test "email addresses should be saved as lower-case" do
+  mixed_case_email = "Foo@ExAMPle.CoM"
+  @person.emailAddress = mixed_case_email
+  @person.save
+  assert_equal mixed_case_email.downcase, @person.reload.emailAddress
+end
+
+  test "telNo should be unique" do
+    duplicate_person = @person.dup
+    duplicate_person.telNo = @person.telNo
     @person.save
     assert_not duplicate_person.valid?
   end

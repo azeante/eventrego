@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902070920) do
+ActiveRecord::Schema.define(version: 20160903014838) do
 
   create_table "attendees", force: :cascade do |t|
     t.datetime "timePayment"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160902070920) do
     t.string   "gender"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["emailAddress"], name: "index_people_on_emailAddress", unique: true
   end
 
   create_table "presenters", force: :cascade do |t|
