@@ -8,9 +8,10 @@ class Person < ApplicationRecord
                         length: { maximum: 255 },
                         uniqueness: { case_sensitive: false },
                         format: { with: VALID_EMAIL_REGEX }
-  validates :telNo, numericality: { only_integer: true }, allow_nil: true, length: { in: 6..30 }, uniqueness: true, if: :is_more_than_zero?
+  validates :telNo, numericality: { only_integer: true, greater_than: 111111 }
   validates :ifSubscribed, presence: true
-  validates :gender, presence: true, inclusion: { in: %w(M F), message: "%{value} is invalid" }
+  validates :gender, presence: true,
+            inclusion: { in: %w(M F), message: "%{value} is invalid" }
   has_many :volunteers
   has_many :organisers
   has_many :attendees
@@ -20,11 +21,5 @@ class Person < ApplicationRecord
   validates_associated :attendees
   validates_associated :presenters
 
-  def is_more_than_zero?
-    if telNo > 0
-      return true
-    else
-      return false
-      end
-  end
+
 end

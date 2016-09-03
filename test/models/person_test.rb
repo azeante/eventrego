@@ -5,41 +5,52 @@ class PersonTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-    @person = Person.new(firstName: "Tammy", lastName: "Soho", emailAddress: "eihornillo8@yopmail.com", telNo: "1881115", ifSubscribed: true, gender: "F")
+    @person = Person.new(firstName: "Tammy", lastName: "Soho",
+                        emailAddress: "eihornillo8@yopmail.com", telNo: "1881115",
+                        ifSubscribed: true, gender: "F")
   end
 
+  test "the two fixture Persons are valid" do
+      assert Person.new(firstName: people(:one), lastName: people(:one),
+                    emailAddress: people(:one), telNo: people(:one),
+                    ifSubscribed: people(:one), gender: people(:one)).valid?, 'First fixture is not valid.'
+      assert Person.new(firstName: people(:two), lastName: people(:two),
+                    emailAddress: people(:two), telNo: people(:two),
+                    ifSubscribed: people(:two), gender: people(:two)).valid?, 'Second fixture is not valid.'
+    end
+
   test "should be valid" do
-    assert @person.valid?
+    assert @person.valid?, "Person is not valid"
   end
 
   test "firstName should be present" do
     @person.firstName = ""
-    assert_not @person.valid?
+    assert_not @person.valid?, "Person lacks a firstName"
   end
 
   test "firstName should not be too long" do
     @person.firstName = "a" * 51
-    assert_not @person.valid?
+    assert_not @person.valid?, "firstName is too long"
   end
 
   test "lastName should be present" do
     @person.lastName = ""
-    assert_not @person.valid?
+    assert_not @person.valid?, "lastName missing"
   end
 
   test "lastName should not be too long" do
     @person.lastName = "a" * 51
-    assert_not @person.valid?
+    assert_not @person.valid?, "lastName is too long"
   end
 
   test "email should be present" do
     @person.emailAddress = ""
-    assert_not @person.valid?
+    assert_not @person.valid?, "emailAddress missing"
   end
 
   test "email should not be too long" do
   @person.emailAddress = "a" * 244 + "@example.com"
-  assert_not @person.valid?
+  assert_not @person.valid?, "emailAddress too long"
   end
 
   test "email validation should accept valid addresses" do
@@ -64,41 +75,25 @@ class PersonTest < ActiveSupport::TestCase
    duplicate_person = @person.dup
    duplicate_person.emailAddress = @person.emailAddress.upcase
    @person.save
-   assert_not duplicate_person.valid?
+   assert_not duplicate_person.valid?, "Person with duplicate emailAddress is saved"
  end
 
  test "email addresses should be saved as lower-case" do
    mixed_case_email = "Foo@ExAMPle.CoM"
    @person.emailAddress = mixed_case_email
     @person.save
-   assert_equal mixed_case_email.downcase, @person.reload.emailAddress
+   assert_equal mixed_case_email.downcase, @person.reload.emailAddress, "emailAddress not saved in lowercase"
  end
 
-  test "telNo should be unique" do
-    duplicate_person = @person.dup
-    duplicate_person.telNo = @person.telNo
-    @person.save
-    assert_not duplicate_person.valid?
-  end
-
   test "telNo should be integer" do
-    @person.telNo = 1.56837502
-    assert_not @person.valid?
+    @person.telNo = 156837.502
+    assert_not @person.valid?, "A float is considered a valid telNo"
   end
 
-  test "telNo should not be too short" do
-    @person.telNo = 11111
-    assert_not @person.valid?
-  end
 
-  test "telNo should not be too long" do
-    @person.telNo = "2" * 31
-    assert_not @person.valid?
-  end
-
-  test "telNo should exceed 0" do
-    @person.telNo = 222222
-    assert @person.valid?
+  test "telNo should exceed minimum" do
+    @person.telNo = 111111
+    assert_not @person.valid?, "The small telNo is considered a valid telNo"
   end
 
   test "ifSubscribed should be present" do
