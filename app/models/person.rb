@@ -3,9 +3,11 @@ class Person < ApplicationRecord
 
   validates :firstName, presence: true, length: { in: 2..20 }
   validates :lastName, presence: true, length: { in: 2..20 }
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :emailAddress, presence: true, length: { in: 2..30 }, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX,
-    message: "invalid" }
+ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  validates :emailAddress, presence: true,
+                        length: { maximum: 255 },
+                        uniqueness: { case_sensitive: false },
+                        format: { with: VALID_EMAIL_REGEX }
   validates :telNo, numericality: { only_integer: true }, allow_nil: true, length: { in: 6..30 }, uniqueness: true, if: :is_more_than_zero?
   validates :ifSubscribed, presence: true
   validates :gender, presence: true, inclusion: { in: %w(M F), message: "%{value} is invalid" }
