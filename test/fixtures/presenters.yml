@@ -1,17 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  biography: MyText
-  remunerationArrangements: MyText
-  allowance: 1.5
-  remuneration: 1.5
-  person: one
-  event: one
-
-two:
-  biography: MyText
-  remunerationArrangements: MyText
-  allowance: 1.5
-  remuneration: 1.5
-  person: two
-  event: two

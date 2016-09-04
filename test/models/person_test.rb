@@ -6,18 +6,14 @@ class PersonTest < ActiveSupport::TestCase
   # end
   def setup
     @person = Person.new(firstName: "Tammy", lastName: "Soho",
-                        emailAddress: "eihornillo8@yopmail.com", telNo: "1881115",
+                        emailAddress: "eihornillo8@yopmail.com", telNo: 1881115,
                         ifSubscribed: true, gender: "F")
   end
 
-  test "the two fixture Persons are valid" do
-      assert Person.new(firstName: people(:one), lastName: people(:one),
-                    emailAddress: people(:one), telNo: people(:one),
-                    ifSubscribed: people(:one), gender: people(:one)).valid?, 'First fixture is not valid.'
-      assert Person.new(firstName: people(:two), lastName: people(:two),
-                    emailAddress: people(:two), telNo: people(:two),
-                    ifSubscribed: people(:two), gender: people(:two)).valid?, 'Second fixture is not valid.'
-    end
+  def teardown
+    @person = nil
+  end
+
 
   test "should be valid" do
     assert @person.valid?, "Person is not valid"
@@ -90,7 +86,6 @@ class PersonTest < ActiveSupport::TestCase
     assert_not @person.valid?, "A float is considered a valid telNo"
   end
 
-
   test "telNo should exceed minimum" do
     @person.telNo = 111111
     assert_not @person.valid?, "The small telNo is considered a valid telNo"
@@ -98,17 +93,17 @@ class PersonTest < ActiveSupport::TestCase
 
   test "ifSubscribed should be present" do
     @person.ifSubscribed = ""
-    assert_not @person.valid?
+    assert_not @person.valid?, "ifSubscribed has not been completed"
   end
 
   test "gender should be present" do
     @person.gender = ""
-    assert_not @person.valid?
+    assert_not @person.valid?, "gender has not been selected"
   end
 
   test "gender should be in set" do
     @person.gender = "G"
-    assert_not @person.valid?
+    assert_not @person.valid?, "invalid data for gender"
   end
 
 end

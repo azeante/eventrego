@@ -1,17 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  firstName: David
-  lastName: Hansson
-  emailAddress: Siest1960@rhyta.com
-  telNo: 2025550188
-  ifSubscribed: false
-  gender: M
-
-two:
-  firstName: Stephanie
-  lastName: Kellock
-  emailAddress: Siest1961@renter.com
-  telNo: 2025550177
-  ifSubscribed: false
-  gender: F

@@ -4,8 +4,10 @@ class Event < ApplicationRecord
   validates :venue, presence: true, length: { maximum: 140 }
   validates :price, numericality: true, if: :is_at_least_zero?
   validates :title, presence: true, length: { in: 2..50 }
-  validates :maximumParticipants, numericality: { only_integer: true }, if: (:is_more_than_zero? && :maximumParticipants_is_more_than_minimumParticipants?)
-  validates :minimumParticipants, numericality: { only_integer: true }, if: :is_more_than_zero?
+  validates :maximumParticipants, numericality: { only_integer: true },
+            if: (:is_more_than_zero? && :maximumParticipants_is_more_than_minimumParticipants?)
+  validates :minimumParticipants, numericality: { only_integer: true },
+          if: :is_more_than_zero?
   validates :participantsMustBring, length: { maximum: 140 }, allow_nil: true
   validates :notes, length: { maximum: 140 }, allow_nil: true
 

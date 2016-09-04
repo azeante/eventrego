@@ -5,6 +5,10 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     @person = people(:one)
   end
 
+  def teardown
+    @person = nil
+  end
+
   test "should get index" do
     get people_url
     assert_response :success
