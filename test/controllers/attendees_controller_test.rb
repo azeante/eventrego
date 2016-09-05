@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AttendeesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @attendee = attendees(:one)
+    @attendee = attendees(:cocktailaone)
   end
 
   test "should get index" do

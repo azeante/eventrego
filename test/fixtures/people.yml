@@ -7,6 +7,14 @@ michael:
   gender: M
   telNo: 6222060
 
+effie:
+  firstName: Effie
+  lastName: Katziris
+  emailAddress: notverymuch@example.gov
+  ifSubscribed: true
+  gender: F
+  telNo: 4665873
+
 archer:
   firstName: Sterling
   lastName: Archer

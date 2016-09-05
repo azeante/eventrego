@@ -2,7 +2,7 @@ require 'test_helper'
 
 class OrganisersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @organiser = organisers(:one)
+    @organiser = organisers(:cocktailoone)
   end
 
   test "should get index" do

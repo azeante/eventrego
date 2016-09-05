@@ -2,7 +2,7 @@ require 'test_helper'
 
 class VolunteersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @volunteer = volunteers(:one)
+    @volunteer = volunteers(:cocktailvone)
   end
 
   test "should get index" do

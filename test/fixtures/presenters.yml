@@ -1,1 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+cocktailpresenter:
+  biography: Michael's first love is single malt scotch
+  remunerationArrangements: voluntary
+  allowance: 0
+  remuneration: 0
+  person: michael
+  event: fridaycocktails
+
+photogpresenter:
+  biography: Sterling first picked up a camera aged 6
+  remunerationArrangements: 100 SGD for time
+  allowance: 0
+  remuneration: 100.00
+  person: archer
+  event: photographyintro

@@ -1,1 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+cocktailvone:
+  role: bouncer
+  person: malory
+  event: fridaycocktails
+
+photogvone:
+  role: event setup
+  person: malory
+  event: photographyintro

@@ -1,1 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+cocktailaone:
+  timePayment: 2016-04-15 12:00:00 +8
+  amountBilled: 15.99
+  amountPaid: 15.99
+  person: archer
+  event: fridaycocktails
+
+cocktailatwo:
+  timePayment: 2016-04-13 12:00:00 +8
+  amountBilled: 15.99
+  amountPaid: 15.99
+  person: lana
+  event: fridaycocktails
+
+photogaone:
+  timePayment: 2016-09-02 12:00:00 +8
+  amountBilled: 100.50
+  amountPaid: 100.50
+  person: lana
+  event: photographyintro

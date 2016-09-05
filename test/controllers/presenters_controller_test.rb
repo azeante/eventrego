@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PresentersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @presenter = presenters(:one)
+    @presenter = presenters(:cocktailpresenter)
   end
 
   test "should get index" do
@@ -17,7 +17,10 @@ class PresentersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create presenter" do
     assert_difference('Presenter.count') do
-      post presenters_url, params: { presenter: { allowance: @presenter.allowance, biography: @presenter.biography, event_id: @presenter.event_id, person_id: @presenter.person_id, remuneration: @presenter.remuneration, remunerationArrangements: @presenter.remunerationArrangements } }
+      post presenters_url, params: { presenter: { allowance: @presenter.allowance,
+          biography: @presenter.biography, event_id: @presenter.event_id,
+          person_id: @presenter.person_id, remuneration: @presenter.remuneration,
+          remunerationArrangements: @presenter.remunerationArrangements } }
     end
 
     assert_redirected_to presenter_url(Presenter.last)
