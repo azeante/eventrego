@@ -1,4 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
 michael:
   firstName: Michael
   lastName: Example
@@ -14,14 +15,6 @@ effie:
   ifSubscribed: true
   gender: F
   telNo: 4665873
-
-archer:
-  firstName: Sterling
-  lastName: Archer
-  emailAddress: duchess@example.gov
-  ifSubscribed: false
-  gender: M
-  telNo: 4665708
 
 lana:
   firstName:  Lana
