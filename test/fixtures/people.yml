@@ -1,1 +1,32 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+michael:
+  firstName: Michael
+  lastName: Example
+  emailAddress: michael@example.com
+  ifSubscribed: true
+  gender: M
+  telNo: 6222060
+
+archer:
+  firstName: Sterling
+  lastName: Archer
+  emailAddress: duchess@example.gov
+  ifSubscribed: false
+  gender: M
+  telNo: 4665708
+
+lana:
+  firstName:  Lana
+  lastName: Kane
+  emailAddress: hands@example.gov
+  ifSubscribed: true
+  gender: F
+  telNo: 702735
+
+malory:
+  firstName:   Malory
+  lastName: Archer
+  emailAddress: boss@example.gov
+  ifSubscribed: true
+  gender: F
+  telNo: 485926

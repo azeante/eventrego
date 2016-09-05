@@ -1,1 +1,22 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+fridaycocktails:
+  dateOfEvent: 2016-04-16
+  timeOfEvent: 2016-04-16 16:00:00 +8
+  venue: Harry's Bar
+  price: 15.99
+  title: Friday Cocktails
+  maximumParticipants: 30
+  minimumParticipants: 10
+  participantsMustBring:
+  notes:            
+
+
+photographyintro:
+  dateOfEvent: 2016-10-05
+  timeOfEvent: 2016-10-05 17:00:00 +8
+  venue: The Meadow
+  price: 100.50
+  title: Introduction to Photography
+  maximumParticipants: 10
+  minimumParticipants: 5
+  participantsMustBring: DSLR, tripod, lenses, lights, batteries
+  notes: Free gift for attendees
