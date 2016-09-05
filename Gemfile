@@ -6,6 +6,8 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
 # hashing the password with bcrypt
 gem 'bcrypt', '3.1.11'
+
+gem 'faker', '1.6.3'
 # add bootstrap gem
 # listing 5.5 https://www.railstutorial.org/book/filling_in_the_layout
 gem 'bootstrap-sass', '3.3.6'
@@ -27,7 +29,8 @@ gem 'better_errors'
 gem 'haml_coffee_assets'
 gem 'devise'
 gem 'cancan'
-gem 'will_paginate'
+gem 'will_paginate', '3.1.0'
+gem 'bootstrap-will_paginate', '0.0.10'
 gem 'attr_encrypted'
 
 

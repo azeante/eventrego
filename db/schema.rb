@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 20160905030544) do
     t.string   "firstName"
     t.string   "lastName"
     t.string   "emailAddress"
-    t.integer  "telNo"
     t.boolean  "ifSubscribed"
     t.string   "gender"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.integer  "telNo",        default: 0
     t.index ["emailAddress"], name: "index_people_on_emailAddress", unique: true
   end
 
