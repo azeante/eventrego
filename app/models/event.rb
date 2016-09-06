@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  default_scope -> { order(timeOfEvent: :desc) }
+  default_scope -> { order(dateOfEvent: :desc) }
 
   validates :dateOfEvent, presence: true
   validates :timeOfEvent, presence: true

@@ -11,7 +11,7 @@ User.create!(name:  "Example User",
              password_confirmation: "foobaredup",
              admin: true)
 
-99.times do |n|
+13.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "foobaredup"
@@ -19,4 +19,25 @@ User.create!(name:  "Example User",
                email: email,
                password:              password,
                password_confirmation: password)
+end
+
+20.times do |e|
+  dateOfEvent = Faker::Date.between(11.months.ago, Date.today)
+  timeOfEvent = Faker::Time.backward(100, :evening)
+  venue = "Ballhaus"
+  price = Faker::Commerce.price
+  title = "Learn to Dance Part #{e+1}"
+  maximumParticipants = 20
+  minimumParticipants = 10
+  participantsMustBring = "Soft dancing slippers, comfortable clothing"
+  notes = "Not applicable"
+  Event.create!(dateOfEvent: dateOfEvent,
+                timeOfEvent: timeOfEvent,
+                venue: venue,
+                price: price,
+                title: title,
+                maximumParticipants: maximumParticipants,
+                minimumParticipants: minimumParticipants,
+                participantsMustBring: participantsMustBring,
+                notes: notes)
 end
