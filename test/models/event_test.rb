@@ -89,4 +89,9 @@ class EventTest < ActiveSupport::TestCase
     assert_not @event.valid?
   end
 
+  test "order should be most recent first" do
+  assert_equal events(:most_recent), Event.first
+end
+
+
 end

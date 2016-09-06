@@ -25,9 +25,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
         firstName: @person.firstName, gender: @person.gender,
         ifSubscribed: @person.ifSubscribed,
         lastName: @person.lastName, telNo: @person.telNo } }
-        debugger
     end
-    debugger
     assert_redirected_to person_url(Person.last)
   end
 

@@ -1,4 +1,6 @@
 class Event < ApplicationRecord
+  default_scope -> { order(timeOfEvent: :desc) }
+
   validates :dateOfEvent, presence: true
   validates :timeOfEvent, presence: true
   validates :venue, presence: true, length: { maximum: 140 }

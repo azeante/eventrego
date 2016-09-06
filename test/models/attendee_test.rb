@@ -7,6 +7,7 @@ class AttendeeTest < ActiveSupport::TestCase
 
   def setup
     @attendee = Attendee.new(timePayment: Time.new(2016, 8, 26,  16,  0,  0), amountBilled: 15.00, amountPaid: 0, person_id: 1, event_id: 1)
+    #@attendee = attendees(:cocktailaone)
   end
 
   test "should be valid" do

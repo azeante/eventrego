@@ -7,7 +7,7 @@ fridaycocktails:
   maximumParticipants: 30
   minimumParticipants: 10
   participantsMustBring:
-  notes:            
+  notes:
 
 
 photographyintro:
@@ -20,3 +20,25 @@ photographyintro:
   minimumParticipants: 5
   participantsMustBring: DSLR, tripod, lenses, lights, batteries
   notes: Free gift for attendees
+
+surfingintro:
+  dateOfEvent: 2016-09-05
+  timeOfEvent: 2016-09-05 17:00:00 +8
+  venue: Echo Beach Bali
+  price: 500.00
+  title: Introduction to Surfing
+  maximumParticipants: 10
+  minimumParticipants: 5
+  participantsMustBring: Swimwear, towel, sunscreen
+  notes: Swimming skills are required
+
+most_recent:
+    dateOfEvent: <%= 1.year.from_now %>
+    timeOfEvent: <%= 1.year.from_now %>
+    venue: Maxwell
+    price: 20.00
+    title: Food Safari
+    maximumParticipants: 10
+    minimumParticipants: 5
+    participantsMustBring: Cash to buy food.
+    notes:
