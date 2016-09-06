@@ -8,6 +8,7 @@ fridaycocktails:
   minimumParticipants: 10
   participantsMustBring:
   notes:
+  picture:
 
 
 photographyintro:
@@ -20,6 +21,7 @@ photographyintro:
   minimumParticipants: 5
   participantsMustBring: DSLR, tripod, lenses, lights, batteries
   notes: Free gift for attendees
+  picture:
 
 surfingintro:
   dateOfEvent: 2016-09-05
@@ -31,6 +33,7 @@ surfingintro:
   minimumParticipants: 5
   participantsMustBring: Swimwear, towel, sunscreen
   notes: Swimming skills are required
+  picture:
 
 most_recent:
     dateOfEvent: <%= 1.year.from_now %>
@@ -42,3 +45,4 @@ most_recent:
     minimumParticipants: 5
     participantsMustBring: Cash to buy food.
     notes:
+    picture:

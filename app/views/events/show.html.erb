@@ -44,6 +44,10 @@
   <strong>Notes:</strong>
   <%= @event.notes %>
 </p>
+<p>
+  <strong>Picture:</strong><br>
+  <%= image_tag @event.picture.url if @event.picture? %>
+</p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

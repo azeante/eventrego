@@ -1,5 +1,6 @@
 <li id="event-<%= event.id %>">
   <span class="title">Title: <%= event.title %></span><br>
+  <span class="picture"><%= image_tag event.picture.url if event.picture? %></span><br>
   <span class="price">Price: <%= event.price %></span><br>
   <span class="dateOfEvent">Date: <%= event.dateOfEvent %></span><br>
   <span class="timeOfEvent">Time: <%= event.timeOfEvent %></span><br>
@@ -7,6 +8,7 @@
   <span class="maximumParticipants">Maximum participants: <%= event.maximumParticipants %></span><br>
   <span class="participantsMustBring">Bring: <%= event.participantsMustBring %></span><br>
   <span class="notes">Notes: <%= event.notes %></span><br>
+  
   <span><%= link_to 'Edit', edit_event_path(event) %></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <span><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
   <br>

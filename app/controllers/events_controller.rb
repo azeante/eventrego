@@ -13,6 +13,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @event = Event.find(params[:id])
   end
 
   # GET /events/new
@@ -22,6 +23,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+  @event = Event.find(params[:id])
   end
 
   # POST /events
@@ -43,13 +45,22 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-
+    @event = Event.find(params[:id])
+    if @event.update_attributes(event_params)
+      # Handle a successful update.
+      flash[:success] = "Event updated"
+      redirect_to @event
+    else
+      render 'edit'
+    end
   end
 
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
-
+      Event.find(params[:id]).destroy
+        flash[:success] = "Event deleted"
+        redirect_to events_url
   end
 
   private
@@ -60,6 +71,8 @@ class EventsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
-    params.require(:event).permit(:dateOfEvent, :timeOfEvent, :venue, :price, :title, :maximumParticipants, :minimumParticipants, :participantsMustBring, :notes)
+    params.require(:event).permit(:dateOfEvent, :timeOfEvent, :venue, :price,
+    :title, :maximumParticipants, :minimumParticipants,
+    :participantsMustBring, :notes, :picture)
   end
 end

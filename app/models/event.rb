@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   default_scope -> { order(dateOfEvent: :desc) }
+  mount_uploader :picture, PictureUploader
 
   validates :dateOfEvent, presence: true
   validates :timeOfEvent, presence: true
@@ -12,6 +13,8 @@ class Event < ApplicationRecord
           if: :is_more_than_zero?
   validates :participantsMustBring, length: { maximum: 140 }, allow_nil: true
   validates :notes, length: { maximum: 140 }, allow_nil: true
+validate  :picture_size
+
 
   has_many :volunteers
   has_many :organisers
@@ -45,5 +48,12 @@ class Event < ApplicationRecord
       return false
       end
   end
+
+  # Validates the size of an uploaded picture.
+def picture_size
+  if picture.size > 5.megabytes
+    errors.add(:picture, "should be less than 5MB")
+  end
+end
 
 end

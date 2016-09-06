@@ -34,7 +34,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
       assert_no_difference 'Event.count' do
         delete event_path(@event)
       end
-      assert_redirected_to root_url
+      assert_redirected_to login_url
     end
 
   end

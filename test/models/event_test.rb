@@ -5,7 +5,15 @@ class EventTest < ActiveSupport::TestCase
   #   assert true
   # end
   def setup
-    @event = Event.new(dateOfEvent: Date.new(2016, 8, 26), timeOfEvent: Time.new(2016, 8, 26,  16,  0,  0), venue: "Boulevard Cundinamarca No. 506, 36451, Singapore", price: 15.00, title: "Dominican Cooking 101", maximumParticipants: 20, minimumParticipants: 6, participantsMustBring: "notebook and pen", notes: "Jar of salsa for each participant" )
+    @event = Event.new(dateOfEvent: Date.new(2016, 8, 26),
+    timeOfEvent: Time.new(2016, 8, 26,  16,  0,  0),
+    venue: "Boulevard Cundinamarca No. 506, 36451, Singapore",
+    price: 15.00, title: "Dominican Cooking 101",
+    maximumParticipants: 20,
+    minimumParticipants: 6,
+    participantsMustBring: "notebook and pen",
+    notes: "Jar of salsa for each participant",
+    picture: "" )
   end
 
   test "should be valid" do
