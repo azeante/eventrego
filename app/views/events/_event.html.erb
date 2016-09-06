@@ -1,0 +1,13 @@
+<li id="event-<%= event.id %>">
+  <span class="title">Title: <%= event.title %></span>
+  <span class="price">Price: <%= event.price %></span>
+  <span class="dateOfEvent">Date: <%= event.dateOfEvent %></span>
+  <span class="timeOfEvent">Time: <%= event.timeOfEvent %></span>
+  <span class="venue">Venue: <%= event.venue %></span>
+  <span class="maximumParticipants">Maximum participants: <%= event.maximumParticipants %></span>
+  <span class="participantsMustBring">Bring: <%= event.participantsMustBring %></span>
+  <span class="notes">Notes: <%= event.notes %></span>
+  <span><%= link_to 'Presenter', event.presenters %></span>
+  <span><%= link_to 'Edit', edit_event_path(event) %></span>
+  <span><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+</li>

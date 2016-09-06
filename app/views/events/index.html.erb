@@ -1,43 +1,11 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, 'All Events') %>
+<h1>All Events</h1>
 
-<h1>Events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Dateofevent</th>
-      <th>Timeofevent</th>
-      <th>Venue</th>
-      <th>Price</th>
-      <th>Title</th>
-      <th>Maximumparticipants</th>
-      <th>Minimumparticipants</th>
-      <th>Participantsmustbring</th>
-      <th>Notes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.dateOfEvent %></td>
-        <td><%= event.timeOfEvent %></td>
-        <td><%= event.venue %></td>
-        <td><%= event.price %></td>
-        <td><%= event.title %></td>
-        <td><%= event.maximumParticipants %></td>
-        <td><%= event.minimumParticipants %></td>
-        <td><%= event.participantsMustBring %></td>
-        <td><%= event.notes %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<%= will_paginate %>
+<ol class="events">
+  <%= render @events %>
+</ol>
+<%= will_paginate %>
 <br>
 
 <%= link_to 'New Event', new_event_path %>
