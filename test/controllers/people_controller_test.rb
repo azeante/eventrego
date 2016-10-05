@@ -19,6 +19,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+# Should create person if doesn't exist
   test "should create person" do
     assert_difference('Person.count') do
       post people_url, params: { person: { emailAddress: @person.emailAddress,
@@ -40,7 +41,10 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update person" do
-    patch person_url(@person), params: { person: { emailAddress: @person.emailAddress, firstName: @person.firstName, gender: @person.gender, ifSubscribed: @person.ifSubscribed, lastName: @person.lastName, telNo: @person.telNo } }
+    patch person_url(@person), params: { person: { emailAddress: @person.emailAddress,
+      firstName: @person.firstName, gender: @person.gender,
+      ifSubscribed: @person.ifSubscribed, lastName: @person.lastName,
+      telNo: @person.telNo } }
     assert_redirected_to person_url(@person)
   end
 
